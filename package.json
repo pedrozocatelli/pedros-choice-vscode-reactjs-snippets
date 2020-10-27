@@ -1,0 +1,54 @@
+{
+  "name": "pedros-choice-vscode-reactjs-snippets",
+  "displayName": "Pedro's Choice - ReactJS",
+  "description": "Pedro's choice of ReactJS snippets for development with VS Code",
+  "version": "1.0.0",
+  "publisher": "pedrozocatelli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets"
+  },
+  "bugs": {
+    "url": "https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "galleryBanner": {
+    "color": "#ff7300",
+    "theme": "dark"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "snippet",
+    "reactjs"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets-ts.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets-ts.json"
+      }
+    ]
+  },
+  "preview": false,
+  "icon": "pedro.jpg",
+  "devDependencies": {
+    "vsce": "^1.81.1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "styles": {
+    "prefix": "styled-react",
+    "body": [
+      "import styled from 'styled-components';",
+      "",
+      "interface ContainerProps {",
+      "  myProps?: boolean;",
+      "}",
+      "",
+      "export const ${1:Container} = styled.${2:div}<ContainerProps>`",
+      "  flex: 1;",
+      "`;",
+      ""
+    ],
+    "description": "Create ReactJS Styled Components file"
+  },
+
+  "componentFunctionalTypescript": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
+      "  myProps?: boolean;",
+      "}",
+      "",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "    </Container>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};"
+    ],
+    "description": "Create ReactJS Functional Component Typescript"
+  }	
+}

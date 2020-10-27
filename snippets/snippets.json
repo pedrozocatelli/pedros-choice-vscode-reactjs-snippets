@@ -1,0 +1,134 @@
+{
+  "createStyledComponent": {
+    "prefix": "styled-react",
+    "body": [
+      "import styled from 'styled-components';",
+      "",
+      "export const ${1:Container} = styled.${2:div}`",
+      "  flex: 1;",
+      "`;",
+      ""
+    ],
+    "description": "Create ReactJS Styled Components file"
+  },
+
+  "createReactFunctionComponentJS": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "    </Container>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create ReactJS Functional Component JavaScript"
+  },	
+
+  "createReactFunctionComponentJSWithUseState": {
+    "prefix": "rfcstate",
+    "body": [
+      "import React, { useState } from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "  const [myState, setMyState] = useState('');",
+      "",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "    </Container>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create ReactJS Functional Component with useState hook"
+  },	
+  "createReactFunctionComponentJSWithUseEffect": {
+    "prefix": "rfceffect",
+    "body": [
+      "import React, { useEffect } from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "  useEffect(() => {",
+      "    console.log('myEffect');",
+      "  }, []);",
+      "",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "    </Container>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create ReactJS Functional Component with useEffect hook"
+  },	
+
+  "createReactFunctionComponentJSWithHooks": {
+    "prefix": "rfcsall",
+    "body": [
+      "import React, { useState, useEffect, useCallback } from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "  const [myState, setMyState] = useState('');",
+      "",
+      "  useEffect(() => {",
+      "    setMyState('');",
+      "  }, []);",
+      "",
+      "  const myCallback = useCallback(() => {",
+      "    console.log(myState);",
+      "  }, [myState]);",
+      "",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "      {myCallback()}",
+      "    </Container>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create ReactJS Functional Component with useEffect, useState and useCallback hooks"
+  },
+
+  "useEffect": {
+    "prefix": "uef",
+    "body": [
+      "useEffect(() => {",
+      "",
+      "}, []);"
+    ],
+    "description": "useEffect Hook"
+  },
+
+  "useCallback": {
+    "prefix": "uca",
+    "body": [
+      "const myCallback = useCallback(() => {",
+      "",
+      "}, []);"
+    ],
+    "description": "useCallback Hook"
+  }
+}
