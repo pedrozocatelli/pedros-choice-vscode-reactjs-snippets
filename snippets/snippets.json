@@ -1,5 +1,5 @@
 {
-  "createStyledComponent": {
+  "createStyledComponentFile": {
     "prefix": "styled-react",
     "body": [
       "import styled from 'styled-components';",
@@ -9,10 +9,21 @@
       "`;",
       ""
     ],
-    "description": "Create ReactJS Styled Components file"
+    "description": "Create a ReactJS Styled Components file"
   },
 
-  "createReactFunctionComponentJS": {
+  "createSyledComponent": {
+    "prefix": "sdiv",
+    "body": [
+      "export const ${1} = styled.${2:div}`",
+      "  flex: 1;",
+      "`;",
+      ""
+    ],
+    "description": "Create ReactJS Styled Component"
+  },
+
+  "createReactFunctionComponent": {
     "prefix": "rfc",
     "body": [
       "import React from 'react';",
@@ -30,10 +41,10 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create ReactJS Functional Component JavaScript"
+    "description": "Create a ReactJS Functional Component"
   },	
 
-  "createReactFunctionComponentJSWithUseState": {
+  "createReactFunctionComponentUseState": {
     "prefix": "rfcstate",
     "body": [
       "import React, { useState } from 'react';",
@@ -53,9 +64,9 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create ReactJS Functional Component with useState hook"
+    "description": "Create a ReactJS Functional Component with useState hook"
   },	
-  "createReactFunctionComponentJSWithUseEffect": {
+  "createReactFunctionComponentUseEffect": {
     "prefix": "rfceffect",
     "body": [
       "import React, { useEffect } from 'react';",
@@ -77,13 +88,13 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create ReactJS Functional Component with useEffect hook"
+    "description": "Create a ReactJS Functional Component with useEffect hook"
   },	
 
-  "createReactFunctionComponentJSWithHooks": {
+  "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
     "prefix": "rfcsall",
     "body": [
-      "import React, { useState, useEffect, useCallback } from 'react';",
+      "import React, { useCallback, useEffect, useState } from 'react';",
       "",
       "import { Container } from './styles';",
       "",
@@ -122,13 +133,81 @@
     "description": "useEffect Hook"
   },
 
+  "useState": {
+    "prefix": "ust",
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
+    "description": "Declare a new useState hook"
+  },
+
   "useCallback": {
     "prefix": "uca",
     "body": [
-      "const myCallback = useCallback(() => {",
+      "const ${1} = useCallback(() => {",
       "",
       "}, []);"
     ],
-    "description": "useCallback Hook"
+    "description": "Declare a new useCallback hook"
+  },
+  "useMemo": {
+    "prefix": "ume",
+    "body": [
+      "const ${1} = useMemo(() => {",
+      "",
+      "}, []);"
+    ],
+    "description": "Declare a new useMemo hook"
+  },
+  "createTypes": {
+    "prefix": "cty",
+    "body": [
+      "export const START_FETCH = '@${1}/START_FETCH'",
+      "export const DONE_FETCH = '@${1}/DONE_FETCH'",
+      ""
+    ],
+    "description": "Create a Type"
+  },
+
+  "createReducer": {
+    "prefix": "cre",
+    "body": [
+      "import * as Types from './types';",
+      "",
+      "const INITIAL_STATE = {",
+      "  data: null,",
+      "  loading: false",
+      "};",
+      "",
+      "export default (state = INITIAL_STATE, action) => {",
+      "  switch (action.type) {",
+      "    case Types.START_FETCH:",
+      "      return { ...state, loading: true };",
+      "    case Types.DONE_FETCH:",
+      "      return { ...state, loading: false };",
+      "    default:",
+      "      return state;",
+      "  }",
+      "};",
+      ""
+    ],
+    "description": "Create a Reducer"
+  },
+  "createAction": {
+    "prefix": "cra",
+    "body": [
+      "import { Action } from 'redux';",
+      "import { ThunkAction } from 'redux-thunk';",
+      "import * as Types from './types';",
+      "",
+      "export const ${1} = () => async (dispatch)  => {",
+      "  try {",
+      "    dispatch({ type: Types.START_FETCH });",
+      "} catch {",
+      " //error",
+      "} finally {",
+      "  dispatch({ type: Types.DONE_FETCH });",
+      "}",
+      ""
+    ],
+    "description": "Create a Reducer"
   }
 }
