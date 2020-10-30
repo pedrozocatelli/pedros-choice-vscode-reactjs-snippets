@@ -9,7 +9,7 @@
       "`;",
       ""
     ],
-    "description": "Create a ReactJS Styled Components file"
+    "description": "Create a React Styled Components file"
   },
 
   "createSyledComponent": {
@@ -20,7 +20,7 @@
       "`;",
       ""
     ],
-    "description": "Create ReactJS Styled Component"
+    "description": "Create React Styled Component"
   },
 
   "createReactFunctionComponent": {
@@ -41,7 +41,7 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create a ReactJS Functional Component"
+    "description": "Create a React Functional Component"
   },	
 
   "createReactFunctionComponentUseState": {
@@ -64,7 +64,7 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create a ReactJS Functional Component with useState hook"
+    "description": "Create a React Functional Component with useState hook"
   },	
   "createReactFunctionComponentUseEffect": {
     "prefix": "rfceffect",
@@ -88,7 +88,7 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create a ReactJS Functional Component with useEffect hook"
+    "description": "Create a React Functional Component with useEffect hook"
   },	
 
   "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
@@ -120,7 +120,7 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create ReactJS Functional Component with useEffect, useState and useCallback hooks"
+    "description": "Create React Functional Component with useEffect, useState and useCallback hooks"
   },
 
   "useEffect": {
@@ -164,7 +164,7 @@
       "export const DONE_FETCH = '@${1}/DONE_FETCH'",
       ""
     ],
-    "description": "Create a Type"
+    "description": "Create a Redux Type"
   },
 
   "createReducer": {
@@ -174,7 +174,7 @@
       "",
       "const INITIAL_STATE = {",
       "  data: null,",
-      "  loading: false",
+      "  loading: false,",
       "};",
       "",
       "export default (state = INITIAL_STATE, action) => {",
@@ -189,25 +189,23 @@
       "};",
       ""
     ],
-    "description": "Create a Reducer"
+    "description": "Create a Redux Reducer"
   },
   "createAction": {
     "prefix": "cra",
     "body": [
-      "import { Action } from 'redux';",
-      "import { ThunkAction } from 'redux-thunk';",
       "import * as Types from './types';",
       "",
       "export const ${1} = () => async (dispatch)  => {",
       "  try {",
       "    dispatch({ type: Types.START_FETCH });",
-      "} catch {",
-      " //error",
-      "} finally {",
-      "  dispatch({ type: Types.DONE_FETCH });",
-      "}",
-      ""
+      "  } catch {",
+      "  //error",
+      "  } finally {",
+      "    dispatch({ type: Types.DONE_FETCH });",
+      "  }",
+      "}"
     ],
-    "description": "Create a Reducer"
+    "description": "Create a Redux Action"
   }
 }

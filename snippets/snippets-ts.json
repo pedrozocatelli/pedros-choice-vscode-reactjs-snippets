@@ -1,22 +1,33 @@
 {
-  "styles": {
+  "createStyledComponentFile": {
     "prefix": "styled-react",
     "body": [
       "import styled from 'styled-components';",
       "",
       "interface ContainerProps {",
       "  myProps?: boolean;",
-      "}",
+      "};",
       "",
       "export const ${1:Container} = styled.${2:div}<ContainerProps>`",
       "  flex: 1;",
       "`;",
       ""
     ],
-    "description": "Create ReactJS Styled Components file"
+    "description": "Create ReactTS Styled Components file"
   },
 
-  "componentFunctionalTypescript": {
+  "createSyledComponent": {
+    "prefix": "sdiv",
+    "body": [
+      "export const ${1} = styled.${2:div}`",
+      "  flex: 1;",
+      "`;",
+      ""
+    ],
+    "description": "Create React Styled Component"
+  },
+
+  "createReactFunctionComponent": {
     "prefix": "rfc",
     "body": [
       "import React from 'react';",
@@ -33,10 +44,233 @@
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
       "    </Container>",
       "  );",
+      "};",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create React Functional Component Typescript"
+  },
+  
+  "createInterface": {
+    "prefix": "itf",
+    "body": [
+      "interface ${1} {",
+      "  myProps?: string;",
+      "};",
+      ""
+    ],
+    "description": "Create React Styled Component"
+  },
+  "createReactFunctionComponentUseState": {
+    "prefix": "rfcstate",
+    "body": [
+      "import React, { useState } from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
+      "  myProps?: boolean;",
       "}",
       "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};"
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "  const [myState, setMyState] = useState('');",
+      "",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "    </Container>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
     ],
-    "description": "Create ReactJS Functional Component Typescript"
-  }	
+    "description": "Create a React Functional Component with useState hook"
+  },
+  "createReactFunctionComponentUseEffect": {
+    "prefix": "rfceffect",
+    "body": [
+      "import React, { useEffect } from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
+      "  myProps?: boolean;",
+      "}",
+      "",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "  useEffect(() => {",
+      "    console.log('myEffect');",
+      "  }, []);",
+      "",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "    </Container>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create a React Functional Component with useEffect hook"
+  },
+
+  "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
+    "prefix": "rfcsall",
+    "body": [
+      "import React, { useCallback, useEffect, useState } from 'react';",
+      "",
+      "import { Container } from './styles';",
+      "",
+      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
+      "  myProps?: boolean;",
+      "}",
+      "",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "  const [myState, setMyState] = useState('');",
+      "",
+      "  useEffect(() => {",
+      "    setMyState('');",
+      "  }, []);",
+      "",
+      "  const myCallback = useCallback(() => {",
+      "    console.log(myState);",
+      "  }, [myState]);",
+      "",
+      "  return (",
+      "    <Container>",
+      "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
+      "    </Container>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+      ""
+    ],
+    "description": "Create React Functional Component with useEffect, useState and useCallback hooks"
+  },
+  "useEffect": {
+    "prefix": "uef",
+    "body": [
+      "useEffect(() => {",
+      "",
+      "}, []);"
+    ],
+    "description": "useEffect Hook"
+  },
+  "useState": {
+    "prefix": "ust",
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
+    "description": "Declare a new useState hook"
+  },
+  "useCallback": {
+    "prefix": "uca",
+    "body": [
+      "const ${1} = useCallback(() => {",
+      "",
+      "}, []);"
+    ],
+    "description": "Declare a new useCallback hook"
+  },
+  "useMemo": {
+    "prefix": "ume",
+    "body": [
+      "const ${1} = useMemo(() => {",
+      "",
+      "}, []);"
+    ],
+    "description": "Declare a new useMemo hook"
+  },
+  "createTypes": {
+    "prefix": "cty",
+    "body": [
+      "export const START_FETCH = '@${1}/START_FETCH';",
+      "export const DONE_FETCH = '@${1}/DONE_FETCH';",
+      "export const GET_DATA = '@${1}/GET_DATA';",
+      "",
+      "interface ${1} {",
+      "  myData: string;",
+      "}",
+      "",
+      "export interface ${1}State {",
+      "  readonly loading: {",
+      "    getData: boolean;",
+      "  };",
+      "  readonly data: ${1}[] | null;",
+      "}",
+      "",
+      "interface START_FETCH {",
+      "  type: typeof START_FETCH;",
+      "  kind: string;",
+      "}",
+      "",
+      "interface DONE_FETCH {",
+      "  type: typeof DONE_FETCH;",
+      "  kind: string;",
+      "}",
+      "",
+      "interface GET_DATA {",
+      "  type: typeof GET_DATA;",
+      "  data: ${1}[];",
+      "}",
+      "",
+      "export type ${1}ActionTypes = ",
+      "   | START_FETCH",
+      "   | DONE_FETCH",
+      "   | GET_DATA;",
+      "",
+      ""
+    ],
+    "description": "Create a Redux Type"
+  },
+  "createReducer": {
+    "prefix": "cre",
+    "body": [
+      "import * as Types from './types';",
+      "",
+      "const INITIAL_STATE = {",
+      "  data: null,",
+      "  loading: {",
+      "    getData: false,",
+      "  },",
+      "};",
+      "",
+      "export default (",
+      "  state = INITIAL_STATE,",
+      "  action = Types.${1}ActionTypes,",
+      "): Types.${1}State => {",
+      "  switch (action.type) {",
+      "    case Types.START_FETCH:",
+      "      return { ...state, loading: { ...state.loading, [action.kind]: true } };",
+      "    case Types.DONE_FETCH:",
+      "      return { ...state, loading: { ...state.loading, [action.kind]: false } };",
+      "    case Types.GET_DATA:",
+      "      return { ...state, data: action.data };",
+      "    default:",
+      "      return state;",
+      "  }",
+      "};",
+      ""
+    ],
+    "description": "Create a Redux Reducer"
+  },
+  "createAction": {
+    "prefix": "cra",
+    "body": [
+      "import * as Types from './types';",
+      "",
+      "export const ${1} = () => async (dispatch)  => {",
+      "  try {",
+      "    dispatch({ type: Types.START_FETCH });",
+      "  } catch {",
+      "  //error",
+      "  } finally {",
+      "    dispatch({ type: Types.DONE_FETCH });",
+      "  }",
+      "}"
+    ],
+    "description": "Create a Redux Action"
+  }
 }
