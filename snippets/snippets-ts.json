@@ -1,6 +1,6 @@
 {
   "createStyledComponentFile": {
-    "prefix": "styled-react",
+    "prefix": "sty",
     "body": [
       "import styled from 'styled-components';",
       "",
@@ -184,7 +184,7 @@
     "description": "Declare a new useMemo hook"
   },
   "createTypes": {
-    "prefix": "cty",
+    "prefix": "rxtype",
     "body": [
       "export const START_FETCH = '@${1}/START_FETCH';",
       "export const DONE_FETCH = '@${1}/DONE_FETCH';",
@@ -226,7 +226,7 @@
     "description": "Create a Redux Type"
   },
   "createReducer": {
-    "prefix": "cre",
+    "prefix": "rxreducer",
     "body": [
       "import * as Types from './types';",
       "",
@@ -257,20 +257,52 @@
     "description": "Create a Redux Reducer"
   },
   "createAction": {
-    "prefix": "cra",
+    "prefix": "rxaction",
     "body": [
+      "import { Action } from 'redux';",
+      "import { ThunkAction } from 'redux-thunk';",
+      "import { StoreState } from 'store';",
       "import * as Types from './types';",
       "",
-      "export const ${1} = () => async (dispatch)  => {",
+      "export const ${1} = (): ThunkAction<",
+      "  void,",
+      "  StoreState,",
+      "  unknown,",
+      "  Action<string>",
+      "> => async (dispatch) => {",
       "  try {",
       "    dispatch({ type: Types.START_FETCH });",
       "  } catch {",
-      "  //error",
+      "    // error",
       "  } finally {",
       "    dispatch({ type: Types.DONE_FETCH });",
       "  }",
-      "}"
+      "};",
+      ""
     ],
     "description": "Create a Redux Action"
+  },
+  "reactotronConfig": {
+    "prefix": "tronconfig",
+    "body": [
+      "import Reactotron from 'reactotron-react-js';",
+      "import { reactotronRedux } from 'reactotron-redux';",
+      "",
+      "declare global {",
+      "  interface Console {",
+      "    tron: any;",
+      "  }",
+      "}",
+      "",
+      "if (process.env.NODE_ENV === 'development') {",
+      "  const tron = Reactotron.configure().use(reactotronRedux()).connect();",
+      "",
+      "  tron.clear!();",
+      "",
+      "  console.tron = tron;",
+      "}",
+      ""
+    ],
+    "description": "Create a Reactotron Config"
   }
 }

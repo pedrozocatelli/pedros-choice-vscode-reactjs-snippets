@@ -1,6 +1,6 @@
 {
   "createStyledComponentFile": {
-    "prefix": "styled-react",
+    "prefix": "sty",
     "body": [
       "import styled from 'styled-components';",
       "",
@@ -158,7 +158,7 @@
     "description": "Declare a new useMemo hook"
   },
   "createTypes": {
-    "prefix": "cty",
+    "prefix": "rxtype",
     "body": [
       "export const START_FETCH = '@${1}/START_FETCH'",
       "export const DONE_FETCH = '@${1}/DONE_FETCH'",
@@ -168,7 +168,7 @@
   },
 
   "createReducer": {
-    "prefix": "cre",
+    "prefix": "rxreducer",
     "body": [
       "import * as Types from './types';",
       "",
@@ -192,7 +192,7 @@
     "description": "Create a Redux Reducer"
   },
   "createAction": {
-    "prefix": "cra",
+    "prefix": "rxaction",
     "body": [
       "import * as Types from './types';",
       "",
