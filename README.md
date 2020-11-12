@@ -2,68 +2,358 @@
    Pedro's Choice - ReactJS Snippets
 </h1>
 
-This extension contains a selections of the best ReactJS Snippets and commands chosen by Pedro.
-
+This extension contains a selections of the best ReactJS Snippets chosen by Pedro.
 
 ## React
 
-|  Prefix | Method                                              |
-| ------: | --------------------------------------------------- |
-|  `imp→` | `import moduleName from 'module'`                   |
-|  `imn→` | `import 'module'`                                   |
-|  `imd→` | `import { destructuredModule } from 'module'`       |
-|  `ime→` | `import * as alias from 'module'`                   |
-|  `ima→` | `import { originalName as aliasName} from 'module'` |
-|  `exp→` | `export default moduleName`                         |
-|  `exd→` | `export { destructuredModule } from 'module'`       |
-|  `exa→` | `export { originalName as aliasName} from 'module'` |
-|  `enf→` | `export const functionName = (params) => { }`       |
-|  `edf→` | `export default (params) => { }`                    |
-|  `met→` | `methodName = (params) => { }`                      |
-|  `fre→` | `arrayName.forEach(element => { }`                  |
-|  `fof→` | `for(let itemName of objectName { }`                |
-|  `fin→` | `for(let itemName in objectName { }`                |
-| `anfn→` | `(params) => { }`                                   |
-|  `nfn→` | `const functionName = (params) => { }`              |
-|  `dob→` | `const {propName} = objectToDescruct`               |
-|  `dar→` | `const [propName] = arrayToDescruct`                |
-|  `sti→` | `setInterval(() => { }, intervalTime`               |
-|  `sto→` | `setTimeout(() => { }, delayTime`                   |
-| `prom→` | `return new Promise((resolve, reject) => { }`       |
-| `cmmb→` | `comment block`                                     |
-|   `cp→` | `const { } = this.props`                            |
-|   `cs→` | `const { } = this.state`                            |
+| Prefix | Renders                          |
+| ------- | -------------------------------- |
+| `rfc →`   | Creates a React Function Component                   |
+| `rfcall →`  | Creates a React Function Component with useCallback, useEffect and useState     |
+| `rfceffect →`  | Creates a React Function Component with useEffect hook     |
+| `rfcstate →`  | Creates a React Function Component with useState hook     |
+| `itf →`  | Creates a new Interface (TS only)    |
+| `uca →`  | useCallback hook       |
+| `uef →`  | useEffect hook       |
+| `ume →`  | useMemo hook       |
+| `ust →`  | useState hook       |
+<br>
+
+## Styled Components
+
+| Prefix | Renders                          |
+| ------- | -------------------------------- |
+| `sty →`   | Creates a Styled Components File                  |
+| `sdiv`  | Creates a new Styled Div     |
+
+<br>
+
+## Redux - Thunk
+
+| Prefix | Renders                          |
+| ------- | -------------------------------- |
+| `rxtype →`   | Creates a Redux Type File                   |
+| `rxreducer →`  | Creates a Redux Reducer File    |
+| `rxaction →`  | Creates a Redux Action File   |
+
+<br>
+
+## Reactotron (TS Only)
+
+| Prefix | Renders                          |
+| ------- | -------------------------------- |
+| `tronconfig →`   | Creates a Reacotron Config File                |
+<br>
+
+## Full Expansions
+### React
+
+- `rfc` - Create **R**eact **F**unctional **C**omponent
+
+```javascript
+import React from 'react';
+
+import { Container } from './styles';
+
+interface |Props {
+  myProps?: boolean;
+}
+
+const |: React.FC<|Props> = () => {
+  return (
+    <Container>
+      <h1>Hello - |</h1>
+    </Container>
+  );
+};
+
+export default |;
+```
+
+- `rfcall` - Create **R**eact **F**unctional **C**omponent with useCallback, useEffect and useState 
+
+```javascript
+import React, { useCallback, useEffect, useState } from 'react';
+
+import { Container } from './styles';
+
+interface |Props {
+  myProps?: boolean;
+}
+
+const |: React.FC<|Props> = () => {
+  const [myState, setMyState] = useState('');
+
+  useEffect(() => {
+    setMyState('');
+  }, []);
+
+  const myCallback = useCallback(() => {
+    console.log(myState);
+  }, [myState]);
+
+  return (
+    <Container>
+      <h1>Hello - |</h1>
+    </Container>
+  );
+};
+
+export default |;
+```
+
+- `rfceffect` - Create **R**eact **F**unctional **C**omponent with use**Effect**
+
+```javascript
+import React, { useEffect } from 'react';
+
+import { Container } from './styles';
+
+interface |Props {
+  myProps?: boolean;
+}
+
+const |: React.FC<|Props> = () => {
+  useEffect(() => {
+    console.log('myEffect');
+  }, []);
+
+  return (
+    <Container>
+      <h1>Hello - |</h1>
+    </Container>
+  );
+};
+
+export default |;
+```
+- `rfcstate` - Create **R**eact **F**unctional **C**omponent with use**State**
+
+```javascript
+import React, { useState } from 'react';
+
+import { Container } from './styles';
+
+interface |Props {
+  myProps?: boolean;
+}
+
+const |: React.FC<|Props> = () => {
+  const [myState, setMyState] = useState('');
+
+  return (
+    <Container>
+      <h1>Hello - |</h1>
+    </Container>
+  );
+};
+
+export default |;
+```
+
+- `itf` - Creates a new **I**n**t**er**f**ace
+
+```javascript
+interface | {
+  myProps?: boolean;
+}
+```
+
+- `uca` - **u**se**Ca**llback hook
+
+```javascript
+const | = useCallback(() => {
+
+}, []);
+```
+
+- `uef` - **u**se**Ef**fect hook
+
+```javascript
+useEffect(() => {
+
+}, []);
+```
+
+- `ume` - **u**se**Me**mo hook
+
+```javascript
+const | = useMemo(() => {
+
+}, []);
+```
+
+- `ust` - **u**se**St**ate hook
+
+```javascript
+const [|, set|] = useState();
+//Press Tab to apply CamelCase. e.g. [state, setState]
+```
+
+### Styled Components
+
+
+- `sty` - Creates a **Sty**led Components File
+
+```javascript
+import styled from 'styled-components';
+
+interface ContainerProps {
+  myProps?: boolean;
+};
+
+export const Container = styled.div<ContainerProps>`
+  flex: 1;
+`;
+```
+
+- `sdiv` - Creates a new **S**tyled **div**
+
+```javascript
+export const | = styled.div`
+  flex: 1;
+`;
+```
+
+### Redux - Thunk
+
+- `rxtype` - Creates a **R**edu**x** **Type** File
+
+```javascript
+export const START_FETCH = '@|/START_FETCH';
+export const DONE_FETCH = '@|/DONE_FETCH';
+export const GET_DATA = '@|/GET_DATA';
+
+interface | {
+  myData: string;
+}
+
+export interface State {
+  readonly loading: {
+    getData: boolean;
+  };
+  readonly data: [] | null;
+}
+
+interface START_FETCH {
+  type: typeof START_FETCH;
+  kind: string;
+}
+
+interface DONE_FETCH {
+  type: typeof DONE_FETCH;
+  kind: string;
+}
+
+interface GET_DATA {
+  type: typeof GET_DATA;
+  data: [];
+}
+
+export type ActionTypes = 
+   | START_FETCH
+   | DONE_FETCH
+   | GET_DATA;
+```
+
+- `rxreducer` - Creates a **R**edu**x** **Reducer** File
+
+```javascript
+import * as Types from './types';
+
+const INITIAL_STATE = {
+  data: null,
+  loading: {
+    getData: false,
+  },
+};
+
+export default (
+  state = INITIAL_STATE,
+  action = Types.ActionTypes,
+): Types.State => {
+  switch (action.type) {
+    case Types.START_FETCH:
+      return { ...state, loading: { ...state.loading, [action.kind]: true } };
+    case Types.DONE_FETCH:
+      return { ...state, loading: { ...state.loading, [action.kind]: false } };
+    case Types.GET_DATA:
+      return { ...state, data: action.data };
+    default:
+      return state;
+  }
+};
+```
+
+- `rxaction` - Creates a **R**edu**x** **Action** File
+
+```javascript
+import { Action } from 'redux';
+import { ThunkAction } from 'redux-thunk';
+import { StoreState } from 'store';
+import * as Types from './types';
+
+export const  = (): ThunkAction<
+  void,
+  StoreState,
+  unknown,
+  Action<string>
+> => async (dispatch) => {
+  try {
+    dispatch({ type: Types.START_FETCH });
+  } catch {
+    // error
+  } finally {
+    dispatch({ type: Types.DONE_FETCH });
+  }
+};
+```
+### Reactotron
+
+- `tronconfig` - Creates a Reaco**tron** **Config** File
+
+```javascript
+import { tron } from "console";
+
+import Reactotron from 'reactotron-react-js';
+import { reactotronRedux } from 'reactotron-redux';
+
+declare global {
+  interface Console {
+    tron: any;
+  }
+}
+
+if (process.env.NODE_ENV === 'development') {
+  const tron = Reactotron.configure().use(reactotronRedux()).connect();
+
+  tron.clear!();
+
+  console.tron = tron;
+}
+```
+<hr>
 
 ## Add to your project
 
 There are 2 ways you can add Pedro's Choice - Keymap to your project:
 
 #### By command
-Launch VS Code Quick Open (`Ctrl+P`), paste `ext install pedroschoice.pedros-choice-vscode-keybindings`, and press enter.
+Launch VS Code Quick Open (`Ctrl+P`), paste `ext install pedroschoice.pedros-choice-reactjs-snippets`, and press enter.
 
 #### By the Extension Marketplace
+
 Launch VS Code Extension Marketplace (Ctrl+Shift+X), search for `Pedro's Choice`, and look for the best looking bald dude in the store.
 
 ## Contributing
 ### How do I contribute?
 
-If you have a sugestion of an awesome shortcut, let me know.
+If you have a sugestion of a new snippet or found some bug, feel free to help me out.
 
-1. Head over to the [GitHub repository](https://github.com/pedrozocatelli/pedros-choice-vscode-keybindings). 
-2. Open the [`package.json` file](https://github.com/pedrozocatelli/pedros-choice-vscode-keybindings/blob/master/package.json). 
-3. Add a JSON object to [`contributes.keybindings`](https://github.com/pedrozocatelli/pedros-choice-vscode-keybindings/blob/master/package.json#L199) as seen below. 
+1. Head over to the [GitHub repository](https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets). 
+2. Open the [`snippets-ts.json` file](https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets/blob/master/snippets/snippets-ts.json) or the [`snippets.json` file](https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets/blob/master/snippets/snippets.json).
+3. Make the changes and updated the README file.
 4. Open a pull request. 
-
-```json
-{
-   "mac": "<keyboard shortcut for mac>",
-   "win": "<keyboard shortcut for windows>",
-   "linux": "<keyboard shortcut for linux>",
-   "key": "<default keyboard shorcut>",
-   "command": "<which command it will trigger>",
-   "when": "<when it should trigger>"
-}
-```
 
 ## License
 [MIT](LICENSE.md)

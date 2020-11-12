@@ -92,7 +92,7 @@
   },	
 
   "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
-    "prefix": "rfcsall",
+    "prefix": "rfcall",
     "body": [
       "import React, { useCallback, useEffect, useState } from 'react';",
       "",

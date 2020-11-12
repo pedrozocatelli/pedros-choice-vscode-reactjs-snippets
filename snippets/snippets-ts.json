@@ -13,7 +13,7 @@
       "`;",
       ""
     ],
-    "description": "Create ReactTS Styled Components file"
+    "description": "Create a React Styled Components file"
   },
 
   "createSyledComponent": {
@@ -24,7 +24,7 @@
       "`;",
       ""
     ],
-    "description": "Create React Styled Component"
+    "description": "Create a React Styled Component"
   },
 
   "createReactFunctionComponent": {
@@ -49,7 +49,7 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create React Functional Component Typescript"
+    "description": "Create a React Functional Component Typescript"
   },
   
   "createInterface": {
@@ -60,7 +60,7 @@
       "};",
       ""
     ],
-    "description": "Create React Styled Component"
+    "description": "Create a React Styled Component"
   },
   "createReactFunctionComponentUseState": {
     "prefix": "rfcstate",
@@ -118,7 +118,7 @@
   },
 
   "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
-    "prefix": "rfcsall",
+    "prefix": "rfcall",
     "body": [
       "import React, { useCallback, useEffect, useState } from 'react';",
       "",
@@ -149,7 +149,7 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create React Functional Component with useEffect, useState and useCallback hooks"
+    "description": "Create a React Functional Component with useEffect, useState and useCallback hooks"
   },
   "useEffect": {
     "prefix": "uef",
