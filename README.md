@@ -17,7 +17,6 @@ This extension contains a selections of the best ReactJS Snippets chosen by Pedr
 | `uef →`  | useEffect hook       |
 | `ume →`  | useMemo hook       |
 | `ust →`  | useState hook       |
-<br>
 
 ## Styled Components
 
@@ -25,8 +24,6 @@ This extension contains a selections of the best ReactJS Snippets chosen by Pedr
 | ------- | -------------------------------- |
 | `sty →`   | Creates a Styled Components File                  |
 | `sdiv`  | Creates a new Styled Div     |
-
-<br>
 
 ## Redux - Thunk
 
@@ -36,14 +33,11 @@ This extension contains a selections of the best ReactJS Snippets chosen by Pedr
 | `rxreducer →`  | Creates a Redux Reducer File    |
 | `rxaction →`  | Creates a Redux Action File   |
 
-<br>
-
 ## Reactotron (TS Only)
 
 | Prefix | Renders                          |
 | ------- | -------------------------------- |
 | `tronconfig →`   | Creates a Reacotron Config File                |
-<br>
 
 ## Full Expansions
 ### React
