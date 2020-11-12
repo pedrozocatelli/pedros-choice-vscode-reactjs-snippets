@@ -1,6 +1,6 @@
 {
   "name": "pedros-choice-vscode-reactjs-snippets",
-  "displayName": "Pedro's Choice - ReactJS",
+  "displayName": "Pedro's Choice - ReactJS Snippets",
   "description": "Pedro's choice of ReactJS snippets for development with VS Code",
   "version": "1.0.0",
   "publisher": "pedrozocatelli",
@@ -47,7 +47,7 @@
     ]
   },
   "preview": false,
-  "icon": "pedro.jpg",
+  "icon": "images/pedroschoice.png",
   "devDependencies": {
     "vsce": "^1.81.1"
   }
