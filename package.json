@@ -3,7 +3,7 @@
   "displayName": "Pedro's Choice - ReactJS Snippets",
   "description": "Pedro's choice of ReactJS snippets for development with VS Code",
   "version": "1.0.0",
-  "publisher": "pedrozocatelli",
+  "publisher": "pedroschoice",
   "repository": {
     "type": "git",
     "url": "https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets"
