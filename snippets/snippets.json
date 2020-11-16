@@ -196,7 +196,7 @@
     "body": [
       "import * as Types from './types';",
       "",
-      "export const ${1} = () => async (dispatch)  => {",
+      "export const ${1} = () => async dispatch  => {",
       "  try {",
       "    dispatch({ type: Types.START_FETCH });",
       "  } catch {",

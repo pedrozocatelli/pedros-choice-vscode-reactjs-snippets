@@ -269,7 +269,7 @@
       "  StoreState,",
       "  unknown,",
       "  Action<string>",
-      "> => async (dispatch) => {",
+      "> => async dispatch => {",
       "  try {",
       "    dispatch({ type: Types.START_FETCH });",
       "  } catch {",
