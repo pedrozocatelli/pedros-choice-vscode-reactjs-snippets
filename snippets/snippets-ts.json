@@ -4,41 +4,47 @@
     "body": [
       "import styled from 'styled-components';",
       "",
-      "interface ContainerProps {",
-      "  myProps?: boolean;",
-      "};",
-      "",
-      "export const ${1:Container} = styled.${2:div}<ContainerProps>`",
-      "  flex: 1;",
-      "`;",
+      "export const ${1:Container} = styled.${2:div}``;",
       ""
     ],
     "description": "Create a React Styled Components file"
   },
 
+  "createStyledComponentFileReactNative": {
+    "prefix": "stynative",
+    "body": [
+      "import styled from 'styled-components/native';",
+      "",
+      "export const ${1:Container} = styled.${2:View}``;",
+      ""
+    ],
+    "description": "Create a React Native Styled Components file"
+  },
+
   "createSyledComponent": {
     "prefix": "sdiv",
     "body": [
-      "export const ${1} = styled.${2:div}`",
-      "  flex: 1;",
-      "`;",
+      "export const ${1} = styled.${2:div}``;",
       ""
     ],
-    "description": "Create a React Styled Component"
+    "description": "Create a Styled Component"
+  },
+
+  "createSyledComponentReactNative": {
+    "prefix": "sview",
+    "body": [
+      "export const ${1} = styled.${2:View}``;",
+      ""
+    ],
+    "description": "Create a Styled Component"
   },
 
   "createReactFunctionComponent": {
     "prefix": "rfc",
     "body": [
-      "import React from 'react';",
-      "",
       "import { Container } from './styles';",
       "",
-      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
-      "  myProps?: boolean;",
-      "}",
-      "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
       "  return (",
       "    <Container>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
@@ -49,7 +55,7 @@
       "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create a React Functional Component Typescript"
+    "description": "Create a React Functional Component - Typescript"
   },
   
   "createInterface": {
@@ -60,20 +66,16 @@
       "};",
       ""
     ],
-    "description": "Create a React Styled Component"
+    "description": "Create an Interface"
   },
   "createReactFunctionComponentUseState": {
     "prefix": "rfcstate",
     "body": [
-      "import React, { useState } from 'react';",
+      "import { useState } from 'react';",
       "",
       "import { Container } from './styles';",
       "",
-      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
-      "  myProps?: boolean;",
-      "}",
-      "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
       "  const [myState, setMyState] = useState('');",
       "",
       "  return (",
@@ -91,15 +93,11 @@
   "createReactFunctionComponentUseEffect": {
     "prefix": "rfceffect",
     "body": [
-      "import React, { useEffect } from 'react';",
+      "import { useEffect } from 'react';",
       "",
       "import { Container } from './styles';",
       "",
-      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
-      "  myProps?: boolean;",
-      "}",
-      "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
       "  useEffect(() => {",
       "    console.log('myEffect');",
       "  }, []);",
@@ -120,15 +118,11 @@
   "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
     "prefix": "rfcall",
     "body": [
-      "import React, { useCallback, useEffect, useState } from 'react';",
+      "import { useCallback, useEffect, useState } from 'react';",
       "",
       "import { Container } from './styles';",
       "",
-      "interface ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props {",
-      "  myProps?: boolean;",
-      "}",
-      "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC<${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}Props> = () => {",
+      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
       "  const [myState, setMyState] = useState('');",
       "",
       "  useEffect(() => {",
@@ -163,7 +157,7 @@
   "useState": {
     "prefix": "ust",
     "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
-    "description": "Declare a new useState hook"
+    "description": "useState Hook"
   },
   "useCallback": {
     "prefix": "uca",
@@ -172,7 +166,7 @@
       "",
       "}, []);"
     ],
-    "description": "Declare a new useCallback hook"
+    "description": "useCallback Hook"
   },
   "useMemo": {
     "prefix": "ume",
@@ -181,7 +175,7 @@
       "",
       "}, []);"
     ],
-    "description": "Declare a new useMemo hook"
+    "description": "useMemo hook"
   },
   "createTypes": {
     "prefix": "rxtype",
@@ -201,26 +195,22 @@
       "  readonly data: ${1}[] | null;",
       "}",
       "",
-      "interface START_FETCH {",
+      "interface StartFetch {",
       "  type: typeof START_FETCH;",
       "  kind: string;",
       "}",
       "",
-      "interface DONE_FETCH {",
+      "interface DoneFetch {",
       "  type: typeof DONE_FETCH;",
       "  kind: string;",
       "}",
       "",
-      "interface GET_DATA {",
+      "interface GetData {",
       "  type: typeof GET_DATA;",
       "  data: ${1}[];",
       "}",
       "",
-      "export type ${1}ActionTypes = ",
-      "   | START_FETCH",
-      "   | DONE_FETCH",
-      "   | GET_DATA;",
-      "",
+      "export type ${1}ActionTypes = StartFetch | DoneFetch | GetData;",
       ""
     ],
     "description": "Create a Redux Type"
@@ -239,7 +229,7 @@
       "",
       "export default (",
       "  state = INITIAL_STATE,",
-      "  action = Types.${1}ActionTypes,",
+      "  action: Types.${1}ActionTypes,",
       "): Types.${1}State => {",
       "  switch (action.type) {",
       "    case Types.START_FETCH:",
@@ -272,10 +262,9 @@
       "> => async dispatch => {",
       "  try {",
       "    dispatch({ type: Types.START_FETCH });",
+      "    dispatch({ type: Types.DONE_FETCH });",
       "  } catch {",
       "    // error",
-      "  } finally {",
-      "    dispatch({ type: Types.DONE_FETCH });",
       "  }",
       "};",
       ""

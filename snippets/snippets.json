@@ -4,30 +4,44 @@
     "body": [
       "import styled from 'styled-components';",
       "",
-      "export const ${1:Container} = styled.${2:div}`",
-      "  flex: 1;",
-      "`;",
+      "export const ${1:Container} = styled.${2:div}``;",
       ""
     ],
     "description": "Create a React Styled Components file"
   },
 
+  "createStyledComponentFileReactNative": {
+    "prefix": "stynative",
+    "body": [
+      "import styled from 'styled-components/native';",
+      "",
+      "export const ${1:Container} = styled.${2:View}``;",
+      ""
+    ],
+    "description": "Create a React Native Styled Components file"
+  },
+
   "createSyledComponent": {
     "prefix": "sdiv",
     "body": [
-      "export const ${1} = styled.${2:div}`",
-      "  flex: 1;",
-      "`;",
+      "export const ${1} = styled.${2:div}``;",
       ""
     ],
-    "description": "Create React Styled Component"
+    "description": "Create a Styled Component"
+  },
+
+  "createSyledComponentReactNative": {
+    "prefix": "sview",
+    "body": [
+      "export const ${1} = styled.${2:View}``;",
+      ""
+    ],
+    "description": "Create a Styled Component"
   },
 
   "createReactFunctionComponent": {
     "prefix": "rfc",
     "body": [
-      "import React from 'react';",
-      "",
       "import { Container } from './styles';",
       "",
       "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
@@ -47,7 +61,7 @@
   "createReactFunctionComponentUseState": {
     "prefix": "rfcstate",
     "body": [
-      "import React, { useState } from 'react';",
+      "import { useState } from 'react';",
       "",
       "import { Container } from './styles';",
       "",
@@ -69,7 +83,7 @@
   "createReactFunctionComponentUseEffect": {
     "prefix": "rfceffect",
     "body": [
-      "import React, { useEffect } from 'react';",
+      "import { useEffect } from 'react';",
       "",
       "import { Container } from './styles';",
       "",
@@ -94,7 +108,7 @@
   "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
     "prefix": "rfcall",
     "body": [
-      "import React, { useCallback, useEffect, useState } from 'react';",
+      "import { useCallback, useEffect, useState } from 'react';",
       "",
       "import { Container } from './styles';",
       "",
@@ -136,7 +150,7 @@
   "useState": {
     "prefix": "ust",
     "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
-    "description": "Declare a new useState hook"
+    "description": "useState hook"
   },
 
   "useCallback": {
@@ -146,7 +160,7 @@
       "",
       "}, []);"
     ],
-    "description": "Declare a new useCallback hook"
+    "description": "useCallback hook"
   },
   "useMemo": {
     "prefix": "ume",
@@ -155,7 +169,7 @@
       "",
       "}, []);"
     ],
-    "description": "Declare a new useMemo hook"
+    "description": "useMemo hook"
   },
   "createTypes": {
     "prefix": "rxtype",
@@ -199,10 +213,9 @@
       "export const ${1} = () => async dispatch  => {",
       "  try {",
       "    dispatch({ type: Types.START_FETCH });",
+      "    dispatch({ type: Types.DONE_FETCH });",
       "  } catch {",
       "  //error",
-      "  } finally {",
-      "    dispatch({ type: Types.DONE_FETCH });",
       "  }",
       "}"
     ],

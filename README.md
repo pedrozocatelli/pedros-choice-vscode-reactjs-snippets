@@ -24,6 +24,8 @@ This extension contains a selections of the best ReactJS Snippets chosen by Pedr
 | ------- | -------------------------------- |
 | `sty →`   | Creates a Styled Components File                  |
 | `sdiv`  | Creates a new Styled Div     |
+| `stynative →`   | Creates a Styled Components File (React Native)                 |
+| `sview`  | Creates a new Styled View (React Native)     |
 
 ## Redux - Thunk
 
@@ -45,15 +47,9 @@ This extension contains a selections of the best ReactJS Snippets chosen by Pedr
 - `rfc` - Create **R**eact **F**unctional **C**omponent
 
 ```javascript
-import React from 'react';
-
 import { Container } from './styles';
 
-interface |Props {
-  myProps?: boolean;
-}
-
-const |: React.FC<|Props> = () => {
+const |: React.FC = () => {
   return (
     <Container>
       <h1>Hello - |</h1>
@@ -67,15 +63,11 @@ export default |;
 - `rfcall` - Create **R**eact **F**unctional **C**omponent with useCallback, useEffect and useState 
 
 ```javascript
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Container } from './styles';
 
-interface |Props {
-  myProps?: boolean;
-}
-
-const |: React.FC<|Props> = () => {
+const |: React.FC = () => {
   const [myState, setMyState] = useState('');
 
   useEffect(() => {
@@ -99,15 +91,11 @@ export default |;
 - `rfceffect` - Create **R**eact **F**unctional **C**omponent with use**Effect**
 
 ```javascript
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { Container } from './styles';
 
-interface |Props {
-  myProps?: boolean;
-}
-
-const |: React.FC<|Props> = () => {
+const |: React.FC = () => {
   useEffect(() => {
     console.log('myEffect');
   }, []);
@@ -124,15 +112,11 @@ export default |;
 - `rfcstate` - Create **R**eact **F**unctional **C**omponent with use**State**
 
 ```javascript
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Container } from './styles';
 
-interface |Props {
-  myProps?: boolean;
-}
-
-const |: React.FC<|Props> = () => {
+const |: React.FC = () => {
   const [myState, setMyState] = useState('');
 
   return (
@@ -192,21 +176,26 @@ const [|, set|] = useState();
 ```javascript
 import styled from 'styled-components';
 
-interface ContainerProps {
-  myProps?: boolean;
-};
-
-export const Container = styled.div<ContainerProps>`
-  flex: 1;
-`;
+export const Container = styled.div``;
 ```
 
 - `sdiv` - Creates a new **S**tyled **div**
 
 ```javascript
-export const | = styled.div`
-  flex: 1;
-`;
+export const | = styled.div``;
+```
+- `stynative` - Creates a **Sty**led Components File for React **Native**
+
+```javascript
+import styled from 'styled-components/native';
+
+export const Container = styled.View``;
+```
+
+- `sview` - Creates a new **S**tyled **View**
+
+```javascript
+export const | = styled.View``;
 ```
 
 ### Redux - Thunk
@@ -229,25 +218,25 @@ export interface State {
   readonly data: [] | null;
 }
 
-interface START_FETCH {
+interface StartFetch {
   type: typeof START_FETCH;
   kind: string;
 }
 
-interface DONE_FETCH {
+interface DoneFetch {
   type: typeof DONE_FETCH;
   kind: string;
 }
 
-interface GET_DATA {
+interface GetData {
   type: typeof GET_DATA;
   data: [];
 }
 
 export type ActionTypes = 
-   | START_FETCH
-   | DONE_FETCH
-   | GET_DATA;
+   | StartFetch
+   | DoneFetch
+   | GetData;
 ```
 
 - `rxreducer` - Creates a **R**edu**x** **Reducer** File
@@ -264,7 +253,7 @@ const INITIAL_STATE = {
 
 export default (
   state = INITIAL_STATE,
-  action = Types.ActionTypes,
+  action: Types.ActionTypes,
 ): Types.State => {
   switch (action.type) {
     case Types.START_FETCH:
@@ -287,18 +276,17 @@ import { ThunkAction } from 'redux-thunk';
 import { StoreState } from 'store';
 import * as Types from './types';
 
-export const  = (): ThunkAction<
+export const | = (): ThunkAction<
   void,
   StoreState,
   unknown,
   Action<string>
-> => async (dispatch) => {
+> => async dispatch => {
   try {
     dispatch({ type: Types.START_FETCH });
+    dispatch({ type: Types.DONE_FETCH });
   } catch {
     // error
-  } finally {
-    dispatch({ type: Types.DONE_FETCH });
   }
 };
 ```
