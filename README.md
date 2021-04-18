@@ -23,9 +23,9 @@ This extension contains a selections of the best ReactJS Snippets chosen by Pedr
 | Prefix | Renders                          |
 | ------- | -------------------------------- |
 | `sty →`   | Creates a Styled Components File                  |
-| `sdiv`  | Creates a new Styled Div     |
+| `sdiv →`  | Creates a new Styled Div     |
 | `stynative →`   | Creates a Styled Components File (React Native)                 |
-| `sview`  | Creates a new Styled View (React Native)     |
+| `sview →`  | Creates a new Styled View (React Native)     |
 
 ## Redux - Thunk
 
