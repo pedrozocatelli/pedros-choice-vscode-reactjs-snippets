@@ -42,17 +42,14 @@
   "createReactFunctionComponent": {
     "prefix": "rfc",
     "body": [
-      "import { Container } from './styles';",
       "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}(){",
       "  return (",
-      "    <Container>",
+      "    <div>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
-      "    </Container>",
+      "    </div>",
       "  );",
       "};",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
     "description": "Create a React Functional Component - Typescript"
@@ -73,19 +70,15 @@
     "body": [
       "import { useState } from 'react';",
       "",
-      "import { Container } from './styles';",
-      "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}(){",
       "  const [myState, setMyState] = useState('');",
       "",
       "  return (",
-      "    <Container>",
+      "    <div>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
-      "    </Container>",
+      "    </div>",
       "  );",
       "};",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
     "description": "Create a React Functional Component with useState hook"
@@ -95,9 +88,7 @@
     "body": [
       "import { useEffect } from 'react';",
       "",
-      "import { Container } from './styles';",
-      "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}(){",
       "  useEffect(() => {",
       "    console.log('myEffect');",
       "  }, []);",
@@ -108,8 +99,6 @@
       "    </Container>",
       "  );",
       "};",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
     "description": "Create a React Functional Component with useEffect hook"
@@ -120,9 +109,7 @@
     "body": [
       "import { useCallback, useEffect, useState } from 'react';",
       "",
-      "import { Container } from './styles';",
-      "",
-      "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}: React.FC = () => {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}(){",
       "  const [myState, setMyState] = useState('');",
       "",
       "  useEffect(() => {",
@@ -134,13 +121,11 @@
       "  }, [myState]);",
       "",
       "  return (",
-      "    <Container>",
+      "    <div>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
-      "    </Container>",
+      "    </div>",
       "  );",
       "};",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
     "description": "Create a React Functional Component with useEffect, useState and useCallback hooks"
@@ -270,28 +255,5 @@
       ""
     ],
     "description": "Create a Redux Action"
-  },
-  "reactotronConfig": {
-    "prefix": "tronconfig",
-    "body": [
-      "import Reactotron from 'reactotron-react-js';",
-      "import { reactotronRedux } from 'reactotron-redux';",
-      "",
-      "declare global {",
-      "  interface Console {",
-      "    tron: any;",
-      "  }",
-      "}",
-      "",
-      "if (process.env.NODE_ENV === 'development') {",
-      "  const tron = Reactotron.configure().use(reactotronRedux()).connect();",
-      "",
-      "  tron.clear!();",
-      "",
-      "  console.tron = tron;",
-      "}",
-      ""
-    ],
-    "description": "Create a Reactotron Config"
   }
 }

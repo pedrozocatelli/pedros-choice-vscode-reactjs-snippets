@@ -42,20 +42,17 @@
   "createReactFunctionComponent": {
     "prefix": "rfc",
     "body": [
-      "import { Container } from './styles';",
       "",
-      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
       "  return (",
-      "    <Container>",
+      "    <div>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
-      "    </Container>",
+      "    </div>",
       "  );",
       "}",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create a React Functional Component"
+    "description": "Create a React Function Component"
   },	
 
   "createReactFunctionComponentUseState": {
@@ -63,46 +60,38 @@
     "body": [
       "import { useState } from 'react';",
       "",
-      "import { Container } from './styles';",
-      "",
-      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
       "  const [myState, setMyState] = useState('');",
       "",
       "  return (",
-      "    <Container>",
+      "    <div>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
-      "    </Container>",
+      "    </div>",
       "  );",
       "}",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create a React Functional Component with useState hook"
+    "description": "Create a React Function Component with useState hook"
   },	
   "createReactFunctionComponentUseEffect": {
     "prefix": "rfceffect",
     "body": [
       "import { useEffect } from 'react';",
       "",
-      "import { Container } from './styles';",
-      "",
-      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
       "  useEffect(() => {",
       "    console.log('myEffect');",
       "  }, []);",
       "",
       "  return (",
-      "    <Container>",
+      "    <div>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
-      "    </Container>",
+      "    </div>",
       "  );",
       "}",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create a React Functional Component with useEffect hook"
+    "description": "Create a React Function Component with useEffect hook"
   },	
 
   "createReactFunctionComponentWithUseStateUseEffectUseCalllback": {
@@ -110,9 +99,7 @@
     "body": [
       "import { useCallback, useEffect, useState } from 'react';",
       "",
-      "import { Container } from './styles';",
-      "",
-      "function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+      "export function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
       "  const [myState, setMyState] = useState('');",
       "",
       "  useEffect(() => {",
@@ -124,17 +111,15 @@
       "  }, [myState]);",
       "",
       "  return (",
-      "    <Container>",
+      "    <div>",
       "      <h1>Hello - ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}</h1>",
       "      {myCallback()}",
-      "    </Container>",
+      "    </div>",
       "  );",
       "}",
-      "",
-      "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
       ""
     ],
-    "description": "Create React Functional Component with useEffect, useState and useCallback hooks"
+    "description": "Create React Function Component with useEffect, useState and useCallback hooks"
   },
 
   "useEffect": {

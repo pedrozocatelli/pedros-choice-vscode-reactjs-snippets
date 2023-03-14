@@ -35,29 +35,21 @@ This extension contains a selections of the best ReactJS Snippets chosen by Pedr
 | `rxreducer →`  | Creates a Redux Reducer File    |
 | `rxaction →`  | Creates a Redux Action File   |
 
-## Reactotron (TS Only)
-
-| Prefix | Renders                          |
-| ------- | -------------------------------- |
-| `tronconfig →`   | Creates a Reacotron Config File                |
-
 ## Full Expansions
 ### React
 
 - `rfc` - Create **R**eact **F**unctional **C**omponent
 
 ```javascript
-import { Container } from './styles';
 
-const |: React.FC = () => {
+export function |(){
   return (
-    <Container>
+    <div>
       <h1>Hello - |</h1>
-    </Container>
+    </div>
   );
 };
 
-export default |;
 ```
 
 - `rfcall` - Create **R**eact **F**unctional **C**omponent with useCallback, useEffect and useState 
@@ -65,9 +57,7 @@ export default |;
 ```javascript
 import { useCallback, useEffect, useState } from 'react';
 
-import { Container } from './styles';
-
-const |: React.FC = () => {
+export function |(){
   const [myState, setMyState] = useState('');
 
   useEffect(() => {
@@ -79,13 +69,12 @@ const |: React.FC = () => {
   }, [myState]);
 
   return (
-    <Container>
+    <div>
       <h1>Hello - |</h1>
-    </Container>
+    </div>
   );
 };
 
-export default |;
 ```
 
 - `rfceffect` - Create **R**eact **F**unctional **C**omponent with use**Effect**
@@ -93,40 +82,34 @@ export default |;
 ```javascript
 import { useEffect } from 'react';
 
-import { Container } from './styles';
-
-const |: React.FC = () => {
+export function |(){
   useEffect(() => {
     console.log('myEffect');
   }, []);
 
   return (
-    <Container>
+    <div>
       <h1>Hello - |</h1>
-    </Container>
+    </div>
   );
 };
 
-export default |;
 ```
 - `rfcstate` - Create **R**eact **F**unctional **C**omponent with use**State**
 
 ```javascript
 import { useState } from 'react';
 
-import { Container } from './styles';
-
-const |: React.FC = () => {
+export function |(){
   const [myState, setMyState] = useState('');
 
   return (
-    <Container>
+    <div>
       <h1>Hello - |</h1>
-    </Container>
+    </div>
   );
 };
 
-export default |;
 ```
 
 - `itf` - Creates a new **I**n**t**er**f**ace
@@ -176,7 +159,7 @@ const [|, set|] = useState();
 ```javascript
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const div = styled.div``;
 ```
 
 - `sdiv` - Creates a new **S**tyled **div**
@@ -189,7 +172,7 @@ export const | = styled.div``;
 ```javascript
 import styled from 'styled-components/native';
 
-export const Container = styled.View``;
+export const div = styled.View``;
 ```
 
 - `sview` - Creates a new **S**tyled **View**
@@ -290,30 +273,6 @@ export const | = (): ThunkAction<
   }
 };
 ```
-### Reactotron
-
-- `tronconfig` - Creates a Reaco**tron** **Config** File
-
-```javascript
-import { tron } from "console";
-
-import Reactotron from 'reactotron-react-js';
-import { reactotronRedux } from 'reactotron-redux';
-
-declare global {
-  interface Console {
-    tron: any;
-  }
-}
-
-if (process.env.NODE_ENV === 'development') {
-  const tron = Reactotron.configure().use(reactotronRedux()).connect();
-
-  tron.clear!();
-
-  console.tron = tron;
-}
-```
 <hr>
 
 ## Add to your project
@@ -330,7 +289,7 @@ Launch VS Code Extension Marketplace (Ctrl+Shift+X), search for `Pedro's Choice`
 ## Contributing
 ### How do I contribute?
 
-If you have a sugestion of a new snippet or found some bug, feel free to help me out.
+If you have a sugestion for a new snippet or found some bug, feel free to help me out.
 
 1. Head over to the [GitHub repository](https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets). 
 2. Open the [`snippets-ts.json` file](https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets/blob/master/snippets/snippets-ts.json) or the [`snippets.json` file](https://github.com/pedrozocatelli/pedros-choice-vscode-reactjs-snippets/blob/master/snippets/snippets.json).
